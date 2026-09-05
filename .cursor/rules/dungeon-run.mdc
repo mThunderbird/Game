@@ -1,0 +1,30 @@
+---
+description: Dungeon Run project conventions and workflow
+alwaysApply: true
+---
+
+# Dungeon Run
+
+C++20 / SDL3 top-down multiplayer dungeon game. Design docs in `docs/` — read `docs/ROADMAP.md` for current phase.
+
+## Stack & architecture
+
+- Local play first; listen-server P2P later. Reusable `net/` must not include SDL.
+- Fixed timestep sim in `src/game/`; SDL lifecycle/loop in `src/app/`; draw-only in `src/render/`.
+- `game` never calls SDL render APIs; `render` never mutates gameplay state.
+- Prefer simple structs/arrays until complexity forces ECS.
+
+## Workflow with Dragostin
+
+- He often implements game logic himself in Ask mode — coach and review; do not take over coding unless he asks or switches to Agent for implementation.
+- When finishing a milestone together, update `docs/ROADMAP.md` (checkboxes + progress log).
+- Keep changes scoped; no drive-by refactors or unsolicited markdown beyond docs he wants updated.
+
+## Build (Windows)
+
+```powershell
+cmake --build build
+.\build\dungeon_run.exe
+```
+
+New terminals may need PATH refresh if `cmake`/`g++` are missing after install.

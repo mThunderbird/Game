@@ -1,0 +1,29 @@
+# Ignore build trees and IDE clutter
+/build/
+/out/
+/cmake-build-*/
+/.vs/
+/.idea/
+CMakeUserPresets.json
+/compile_commands.json
+
+# Keep shared Cursor/VS Code workspace settings; ignore personal junk
+/.vscode/*
+!/.vscode/settings.json
+
+# Compiled artifacts
+*.obj
+*.o
+*.exe
+*.pdb
+*.ilk
+*.dll
+*.lib
+*.a
+*.so
+*.dylib
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store

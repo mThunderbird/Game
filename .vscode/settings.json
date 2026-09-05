@@ -1,0 +1,11 @@
+{
+  "cmake.useCMakePresets": "always",
+  "cmake.configureOnOpen": true,
+  "clangd.arguments": [
+    "--query-driver=**/g++.exe,**/g++",
+    "--compile-commands-dir=${workspaceFolder}/build"
+  ],
+  "clangd.fallbackFlags": [
+    "-std=c++20"
+  ]
+}
